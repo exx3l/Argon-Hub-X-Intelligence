@@ -123,31 +123,6 @@
       flex-wrap: wrap;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-box {
-      background-color: #121212;
-      border: 1px solid #ff2b2b;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 250px;
-    }
-
-    .feature-box h3 {
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-
-    .feature-box p {
-      color: #ccc;
-    }
-
     .music-controls {
       position: fixed;
       bottom: 20px;
@@ -188,20 +163,6 @@
         <li>🎯 High Accuracy Script</li>
       </ul>
     </div>
-    <div class="features">
-      <div class="feature-box">
-        <h3>Sleek UI</h3>
-        <p>Modern, clean, and regularly updated interface for easy use.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Undetected Features</h3>
-        <p>Secure features designed to bypass most anti-cheats.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Secure</h3>
-        <p>Uses advanced encryption to keep your data safe and private.</p>
-      </div>
-    </div>
   </section>
 
   <section id="videos">
@@ -224,7 +185,7 @@
     </div>
   </section>
 
-  <audio id="bgMusic" loop autoplay>
+  <audio id="bgMusic" loop muted>
     <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_c2d3d2fd9b.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -250,6 +211,13 @@
     const volumeControl = document.getElementById("volumeControl");
     volumeControl.addEventListener("input", () => {
       bgMusic.volume = volumeControl.value;
+    });
+
+    // Enable music playback on first user interaction
+    document.addEventListener("click", function initAudio() {
+      bgMusic.muted = false;
+      bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+      document.removeEventListener("click", initAudio);
     });
   </script>
 </body>
