@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,6 +97,24 @@
       word-break: break-word;
       white-space: pre-wrap;
     }
+
+    button.copy-btn {
+      margin-top: 1rem;
+      background-color: #ff2b2b;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .copied-msg {
+      color: #4caf50;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -118,7 +135,11 @@
   <section id="home">
     <div class="box">
       <h2>Features</h2>
-      <p>Explore the powerful features of Argon Hub X built for Blade Ball domination.</p>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>⚡ Auto Parry Detection</li>
+        <li>🔥 Customizable Visuals</li>
+        <li>🎯 High Accuracy Script</li>
+      </ul>
     </div>
   </section>
 
@@ -134,10 +155,23 @@
   <section id="script">
     <div class="box">
       <h2>Script</h2>
-      <code>
-loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()
-      </code>
+      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
+      <button class="copy-btn" onclick="copyScript()">Copy Script</button>
+      <div class="copied-msg" id="copiedMsg">Copied to clipboard!</div>
     </div>
   </section>
+
+  <script>
+    function copyScript() {
+      const scriptText = document.getElementById("scriptCode").textContent;
+      navigator.clipboard.writeText(scriptText).then(() => {
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = "block";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
