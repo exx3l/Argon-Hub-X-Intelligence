@@ -80,7 +80,7 @@
       border: 1px solid #ff2b2b;
       padding: 2rem;
       margin: 1rem auto;
-      max-width: 600px;
+      max-width: 800px;
       border-radius: 8px;
       word-wrap: break-word;
       overflow-wrap: break-word;
@@ -115,6 +115,38 @@
       font-size: 0.9rem;
       display: none;
     }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-box {
+      background-color: #121212;
+      border: 1px solid #ff2b2b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: 250px;
+    }
+
+    .feature-box h3 {
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+    }
+
+    .feature-box p {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -141,14 +173,30 @@
         <li>🎯 High Accuracy Script</li>
       </ul>
     </div>
+    <div class="features">
+      <div class="feature-box">
+        <h3>Sleek UI</h3>
+        <p>Modern, clean, and regularly updated interface for easy use.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Undetected Features</h3>
+        <p>Secure features designed to bypass most anti-cheats.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Secure</h3>
+        <p>Uses advanced encryption to keep your data safe and private.</p>
+      </div>
+    </div>
   </section>
 
   <section id="videos">
     <div class="box">
       <h2>Videos</h2>
-      <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
-      <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
-      <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
+      <div class="video-wrapper">
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
