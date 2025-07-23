@@ -25,6 +25,26 @@
       font-size: 2.5rem;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #121212;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(255, 0, 0, 0.2);
+    }
+
+    nav a {
+      color: #ff4d4d;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
     .script-box {
       background: #1c1c1c;
       border: 2px solid #ff2b2b;
@@ -58,11 +78,13 @@
       border-radius: 8px;
       margin-top: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
     }
 
     button:hover {
       background: #e60000;
+      box-shadow: 0 0 16px rgba(255, 0, 0, 0.8);
     }
 
     .copied {
@@ -70,6 +92,37 @@
       font-size: 0.9rem;
       margin-top: 0.5rem;
       display: none;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+
+    .feature-box {
+      background: #1a1a1a;
+      border: 2px solid #ff2b2b;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+
+    .feature-box h3 {
+      color: #ffffff;
+    }
+
+    .feature-box p {
+      color: #ffb3b3;
     }
 
     .videos {
@@ -108,14 +161,36 @@
 </head>
 <body>
   <header>
-    <h1> Argon Hub X | Intelligence </h1>
+    <h1>Argon Hub X</h1>
   </header>
 
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Premium</a>
+    <a href="https://discord.gg/G2WgRW295J" target="_blank">Discord</a>
+  </nav>
+
   <div class="script-box">
-    <h2>Script</h2>
+    <h2>Your Script</h2>
     <code id="script">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
     <button onclick="copyScript()">Copy Script</button>
     <div class="copied" id="copied">✅ Script copied to clipboard!</div>
+  </div>
+
+  <div class="features">
+    <div class="feature-box">
+      <h3>Sleek UI</h3>
+      <p>Modern, clean, and regularly updated interface for easy use.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Undetected Features</h3>
+      <p>Secure features designed to bypass most anti-cheats.</p>
+    </div>
+    <div class="feature-box">
+      <h3>Secure</h3>
+      <p>Uses advanced encryption to keep your data safe and private.</p>
+    </div>
   </div>
 
   <div class="videos">
