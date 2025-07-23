@@ -151,7 +151,7 @@
 
     .review-section {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0 auto 4rem;
       background: #1a1a1a;
       border-radius: 12px;
       padding: 2rem;
@@ -197,10 +197,46 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">...</section>
-  <section id="videos">...</section>
-  <section id="script">...</section>
-  <section id="contact">...</section>
+  <section id="home">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>Auto Parry</h3>
+        <p>Instant reaction to incoming attacks with customizable timing.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Lag Optimization</h3>
+        <p>Boosts FPS and reduces ping while running the script.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Fast Updates</h3>
+        <p>Script is updated daily with new Blade Ball features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos">
+    <h2>Demo Videos</h2>
+    <div class="videos">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="script">
+    <h2>Script</h2>
+    <div class="script-box">
+      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
+      <button onclick="copyScript()">Copy Script</button>
+      <div id="copied" class="copied">Copied!</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Contact: agentx77</p>
+    <p><a href="https://discord.gg/G2WgRW295J" style="color:#ffb3b3;">Join our Discord</a></p>
+  </section>
 
   <section id="reviews" class="review-section">
     <h2>User Reviews</h2>
