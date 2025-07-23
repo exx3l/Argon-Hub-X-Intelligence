@@ -205,21 +205,4 @@
       <h2>Script</h2>
       <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
       <button class="copy-btn" onclick="copyScript()">Copy Script</button>
-      <div class="copied-msg" id="copiedMsg">Copied to clipboard!</div>
-    </div>
-  </section>
-
-  <script>
-    function copyScript() {
-      const scriptText = document.getElementById("scriptCode").textContent;
-      navigator.clipboard.writeText(scriptText).then(() => {
-        const msg = document.getElementById("copiedMsg");
-        msg.style.display = "block";
-        setTimeout(() => {
-          msg.style.display = "none";
-        }, 2000);
-      });
-    }
-  </script>
-</body>
-</html>
+      <div class="copied-msg" id="copiedMsg">Cop
