@@ -74,6 +74,25 @@
     .help-banner a:hover {
       color: #ffffff;
     }
+
+    .box {
+      background-color: #1a1a1a;
+      border: 1px solid #ff2b2b;
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 600px;
+      border-radius: 8px;
+    }
+
+    code {
+      display: inline-block;
+      background-color: #121212;
+      padding: 1rem;
+      color: #ffffff;
+      border-radius: 5px;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
@@ -93,27 +112,35 @@
   </div>
 
   <section id="home">
-    <h2>Features</h2>
-    <p>Explore the powerful features of Argon Hub X built for Blade Ball domination.</p>
+    <div class="box">
+      <h2>Features</h2>
+      <p>Explore the powerful features of Argon Hub X built for Blade Ball domination.</p>
+    </div>
   </section>
 
   <section id="videos">
-    <h2>Videos</h2>
-    <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
-    <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
-    <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
+    <div class="box">
+      <h2>Videos</h2>
+      <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
+      <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
+      <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
+    </div>
   </section>
 
   <section id="script">
-    <h2>Script</h2>
-    <code>
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()
-    </code>
+    <div class="box">
+      <h2>Script</h2>
+      <code>
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()
+      </code>
+    </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p style="color: white;">agentx77</p>
+    <div class="box">
+      <h2>Contact</h2>
+      <p style="color: white;">agentx77</p>
+    </div>
   </section>
 </body>
 </html>
