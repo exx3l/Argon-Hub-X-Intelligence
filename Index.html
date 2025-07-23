@@ -76,14 +76,19 @@
     }
 
     .box {
-      background-color: #1a1a1a;
+      background-color: #191919;
       border: 1px solid #ff2b2b;
       padding: 2rem;
       margin: 1rem auto;
-      max-width: 800px;
-      border-radius: 8px;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+      max-width: 850px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 43, 43, 0.3);
+      transition: 0.3s ease;
+    }
+
+    h2 {
+      color: #ffffff;
+      margin-bottom: 1.5rem;
     }
 
     code {
@@ -103,10 +108,15 @@
       background-color: #ff2b2b;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       cursor: pointer;
       border-radius: 5px;
       font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button.copy-btn:hover {
+      background-color: #ff0000;
     }
 
     .copied-msg {
@@ -123,6 +133,11 @@
       flex-wrap: wrap;
     }
 
+    iframe {
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 43, 43, 0.3);
+    }
+
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -137,6 +152,12 @@
       padding: 1.5rem;
       border-radius: 8px;
       width: 250px;
+      box-shadow: 0 0 10px rgba(255, 43, 43, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.05);
     }
 
     .feature-box h3 {
@@ -163,7 +184,9 @@
   <div class="help-banner">
     Need Help? <a href="https://discord.gg/G2WgRW295J" target="_blank">Join our Discord server</a>.
   </div>
-   <div class="features">
+
+  <section id="home">
+    <div class="features">
       <div class="feature-box">
         <h3>Sleek UI</h3>
         <p>Modern, clean, and regularly updated interface for easy use.</p>
