@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,16 +83,20 @@
       margin: 1rem auto;
       max-width: 600px;
       border-radius: 8px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     code {
-      display: inline-block;
+      display: block;
       background-color: #121212;
       padding: 1rem;
       color: #ffffff;
       border-radius: 5px;
       margin-top: 1rem;
       font-size: 0.9rem;
+      word-break: break-word;
+      white-space: pre-wrap;
     }
   </style>
 </head>
@@ -104,7 +109,6 @@
     <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#script">Script</a>
-    <a href="#contact">Contact</a>
   </nav>
 
   <div class="help-banner">
@@ -131,15 +135,8 @@
     <div class="box">
       <h2>Script</h2>
       <code>
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()
       </code>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="box">
-      <h2>Contact</h2>
-      <p style="color: white;">agentx77</p>
     </div>
   </section>
 </body>
