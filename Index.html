@@ -152,7 +152,6 @@
     }
 
     footer {
-      margin-top: 3rem;
       padding: 1rem;
       background: #1a1a1a;
       font-size: 1rem;
@@ -179,8 +178,12 @@
     <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#script">Script</a>
-    <a href="#contact">Contact</a>
   </nav>
+
+  <footer>
+    <p>📞 Contact: <a href="https://discord.com/users/agentx77">@agentx77</a></p>
+    <p>🔗 Join the Discord server: <a href="https://discord.gg/G2WgRW295J" target="_blank">discord.gg/G2WgRW295J</a></p>
+  </footer>
 
   <section id="home">
     <h2>Home</h2>
@@ -205,29 +208,4 @@
     <div class="videos">
       <iframe src="https://www.youtube.com/embed/fdIAG4ylvbY" title="Blade Ball Script 1" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/iShJ0yD8dRg" title="Blade Ball Script 2" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/455juiLRd9c" title="Blade Ball Script 3" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section id="script">
-    <div class="script-box">
-      <h2>Your Script</h2>
-      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
-      <button onclick="copyScript()">Copy Script</button>
-      <div class="copied" id="copied">✅ Script copied to clipboard!</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <footer>
-      <p>📞 Contact: <a href="https://discord.com/users/agentx77">@agentx77</a></p>
-      <p>🔗 Join the Discord server: <a href="https://discord.gg/G2WgRW295J" target="_blank">discord.gg/G2WgRW295J</a></p>
-    </footer>
-  </section>
-
-  <script>
-    function copyScript() {
-      const scriptText = document.getElementById("scriptCode").innerText;
-      navigator.clipboard.writeText(scriptText).then(() => {
-        const copiedMsg = document.getElementById("copied");
-        copiedMsg.style.display = '
+      <iframe src="https://www.youtube.com/embed/455juiLRd9c" title="Blade Ball Script 3" al
