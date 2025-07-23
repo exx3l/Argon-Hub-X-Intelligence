@@ -53,7 +53,7 @@
     }
 
     section {
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
     }
 
     .script-box {
@@ -176,19 +176,23 @@
   </header>
 
   <nav>
+    <a href="#script">Script</a>
     <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">
+  <section id="script">
     <div class="script-box">
       <h2>Your Script</h2>
-      <code id="script">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
+      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
       <button onclick="copyScript()">Copy Script</button>
       <div class="copied" id="copied">✅ Script copied to clipboard!</div>
     </div>
+  </section>
 
+  <section id="home">
+    <h2>Features</h2>
     <div class="features">
       <div class="feature-box">
         <h3>Sleek UI</h3>
@@ -206,6 +210,7 @@
   </section>
 
   <section id="videos">
+    <h2>Videos</h2>
     <div class="videos">
       <iframe src="https://www.youtube.com/embed/fdIAG4ylvbY" title="Blade Ball Script 1" allowfullscreen></iframe>
       <iframe src="https://www.youtube.com/embed/iShJ0yD8dRg" title="Blade Ball Script 2" allowfullscreen></iframe>
@@ -222,7 +227,7 @@
 
   <script>
     function copyScript() {
-      const scriptText = document.getElementById("script").innerText;
+      const scriptText = document.getElementById("scriptCode").innerText;
       navigator.clipboard.writeText(scriptText).then(() => {
         const copiedMsg = document.getElementById("copied");
         copiedMsg.style.display = 'block';
