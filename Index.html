@@ -56,96 +56,117 @@
       padding: 4rem 1rem;
     }
 
-    .help-banner {
-      background-color: #1a1a1a;
+    .script-box {
+      background: #1c1c1c;
+      border: 2px solid #ff2b2b;
+      margin: 2rem auto;
+      max-width: 600px;
       padding: 1rem;
-      font-size: 1rem;
-      color: #ffffff;
-      border-top: 1px solid #ff2b2b;
-      border-bottom: 1px solid #ff2b2b;
-    }
-
-    .help-banner a {
-      color: #ff4d4d;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .help-banner a:hover {
-      color: #ffffff;
-    }
-
-    .box {
-      background-color: #1a1a1a;
-      border: 1px solid #ff2b2b;
-      padding: 2rem;
-      margin: 1rem auto;
-      max-width: 800px;
-      border-radius: 8px;
-      word-wrap: break-word;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ff2b2b;
       overflow-wrap: break-word;
+      word-break: break-word;
     }
 
     code {
       display: block;
-      background-color: #121212;
-      padding: 1rem;
-      color: #ffffff;
-      border-radius: 5px;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      word-break: break-word;
       white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      background-color: #0f0f0f;
+      padding: 1rem;
+      border-radius: 8px;
+      color: #fff;
+      overflow-x: auto;
     }
 
-    button.copy-btn {
-      margin-top: 1rem;
-      background-color: #ff2b2b;
-      color: white;
+    button {
+      background: #ff2b2b;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      color: white;
+      border-radius: 8px;
+      margin-top: 1rem;
       cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
+      transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
     }
 
-    .copied-msg {
-      color: #4caf50;
-      margin-top: 0.5rem;
+    button:hover {
+      background: #e60000;
+      box-shadow: 0 0 16px rgba(255, 0, 0, 0.8);
+    }
+
+    .copied {
+      color: #00ff99;
       font-size: 0.9rem;
+      margin-top: 0.5rem;
       display: none;
-    }
-
-    .video-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
     }
 
     .features {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
     }
 
     .feature-box {
-      background-color: #121212;
-      border: 1px solid #ff2b2b;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 250px;
+      background: linear-gradient(145deg, #1e1e1e, #0f0f0f);
+      border: 2px solid #ff2b2b;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
     }
 
     .feature-box h3 {
-      margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     .feature-box p {
-      color: #ccc;
+      color: #ffb3b3;
+    }
+
+    .videos {
+      margin: 3rem auto;
+      max-width: 90%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      border: 2px solid #ff2b2b;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff2b2b;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #1a1a1a;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    a {
+      color: #ff4d4d;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -158,21 +179,11 @@
     <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#script">Script</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <div class="help-banner">
-    Need Help? <a href="https://discord.gg/G2WgRW295J" target="_blank">Join our Discord server</a>.
-  </div>
-
   <section id="home">
-    <div class="box">
-      <h2>Features</h2>
-      <ul style="list-style: none; padding-left: 0;">
-        <li>⚡ Auto Parry Detection</li>
-        <li>🔥 Customizable Visuals</li>
-        <li>🎯 High Accuracy Script</li>
-      </ul>
-    </div>
+    <h2>Home</h2>
     <div class="features">
       <div class="feature-box">
         <h3>Sleek UI</h3>
@@ -190,19 +201,33 @@
   </section>
 
   <section id="videos">
-    <div class="box">
-      <h2>Videos</h2>
-      <div class="video-wrapper">
-        <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
-        <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
-        <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
-      </div>
+    <h2>Videos</h2>
+    <div class="videos">
+      <iframe src="https://www.youtube.com/embed/fdIAG4ylvbY" title="Blade Ball Script 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/iShJ0yD8dRg" title="Blade Ball Script 2" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/455juiLRd9c" title="Blade Ball Script 3" allowfullscreen></iframe>
     </div>
   </section>
 
   <section id="script">
-    <div class="box">
-      <h2>Script</h2>
+    <div class="script-box">
+      <h2>Your Script</h2>
       <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
-      <button class="copy-btn" onclick="copyScript()">Copy Script</button>
-      <div class="copied-msg" id="copiedMsg">Cop
+      <button onclick="copyScript()">Copy Script</button>
+      <div class="copied" id="copied">✅ Script copied to clipboard!</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <footer>
+      <p>📞 Contact: <a href="https://discord.com/users/agentx77">@agentx77</a></p>
+      <p>🔗 Join the Discord server: <a href="https://discord.gg/G2WgRW295J" target="_blank">discord.gg/G2WgRW295J</a></p>
+    </footer>
+  </section>
+
+  <script>
+    function copyScript() {
+      const scriptText = document.getElementById("scriptCode").innerText;
+      navigator.clipboard.writeText(scriptText).then(() => {
+        const copiedMsg = document.getElementById("copied");
+        copiedMsg.style.display = '
