@@ -71,8 +71,6 @@
     code {
       display: block;
       white-space: pre-wrap;
-      word-break: break-word;
-      overflow-wrap: break-word;
       background-color: #0f0f0f;
       padding: 1rem;
       border-radius: 8px;
@@ -151,22 +149,39 @@
       box-shadow: 0 0 10px #ff2b2b;
     }
 
-    footer {
-      margin-top: 3rem;
-      padding: 1rem;
+    .review-section {
+      max-width: 800px;
+      margin: 0 auto;
       background: #1a1a1a;
-      font-size: 1rem;
-      color: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      color: white;
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
     }
 
-    a {
-      color: #ff4d4d;
-      text-decoration: none;
+    .review-section h2 {
+      margin-bottom: 1rem;
     }
 
-    a:hover {
-      color: #ffffff;
-      text-decoration: underline;
+    .review {
+      text-align: left;
+      margin-top: 1rem;
+      border-top: 1px solid #ff2b2b;
+      padding-top: 1rem;
+    }
+
+    .review small {
+      color: #ccc;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ff2b2b;
+      background: #0f0f0f;
+      color: white;
     }
   </style>
 </head>
@@ -182,47 +197,27 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="home">
-    <h2>Home</h2>
-    <div class="features">
-      <div class="feature-box">
-        <h3>Sleek UI</h3>
-        <p>Modern, clean, and regularly updated interface for easy use.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Undetected Features</h3>
-        <p>Secure features designed to bypass most anti-cheats.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Secure</h3>
-        <p>Uses advanced encryption to keep your data safe and private.</p>
-      </div>
-    </div>
-  </section>
+  <section id="home">...</section>
+  <section id="videos">...</section>
+  <section id="script">...</section>
+  <section id="contact">...</section>
 
-  <section id="videos">
-    <h2>Videos</h2>
-    <div class="videos">
-      <iframe src="https://www.youtube.com/embed/fdIAG4ylvbY" title="Blade Ball Script 1" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/iShJ0yD8dRg" title="Blade Ball Script 2" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/455juiLRd9c" title="Blade Ball Script 3" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section id="script">
-    <div class="script-box">
-      <h2>Your Script</h2>
-      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
-      <button onclick="copyScript()">Copy Script</button>
-      <div class="copied" id="copied">✅ Script copied to clipboard!</div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <footer>
-      <p>📞 Contact: <a href="https://discord.com/users/agentx77">@agentx77</a></p>
-      <p>🔗 Join the Discord server: <a href="https://discord.gg/G2WgRW295J" target="_blank">discord.gg/G2WgRW295J</a></p>
-    </footer>
+  <section id="reviews" class="review-section">
+    <h2>User Reviews</h2>
+    <form id="reviewForm">
+      <input type="text" id="reviewName" placeholder="Your name" required />
+      <select id="reviewStars">
+        <option value="">Rate 1-5</option>
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+      </select>
+      <textarea id="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+    <div id="reviewList"></div>
   </section>
 
   <script>
@@ -234,6 +229,25 @@
         setTimeout(() => copiedMsg.style.display = 'none', 2500);
       });
     }
+
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewList = document.getElementById('reviewList');
+
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('reviewName').value;
+      const stars = document.getElementById('reviewStars').value;
+      const text = document.getElementById('reviewText').value;
+
+      const review = document.createElement('div');
+      review.classList.add('review');
+      const time = new Date().toLocaleString();
+      review.innerHTML = `<strong>${name}</strong> - ${'⭐'.repeat(stars)}<br><p>${text}</p><small>${time}</small>`;
+
+      reviewList.prepend(review);
+      reviewForm.reset();
+    });
   </script>
 </body>
 </html>
+
