@@ -56,116 +56,111 @@
       padding: 4rem 1rem;
     }
 
-    .script-box {
-      background: #1c1c1c;
-      border: 2px solid #ff2b2b;
-      margin: 2rem auto;
-      max-width: 600px;
+    .help-banner {
+      background-color: #1a1a1a;
       padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #ff2b2b;
+      font-size: 1rem;
+      color: #ffffff;
+      border-top: 1px solid #ff2b2b;
+      border-bottom: 1px solid #ff2b2b;
+    }
+
+    .help-banner a {
+      color: #ff4d4d;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .help-banner a:hover {
+      color: #ffffff;
+    }
+
+    .box {
+      background-color: #1a1a1a;
+      border: 1px solid #ff2b2b;
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 800px;
+      border-radius: 8px;
+      word-wrap: break-word;
       overflow-wrap: break-word;
-      word-break: break-word;
     }
 
     code {
       display: block;
-      white-space: pre-wrap;
-      word-break: break-word;
-      overflow-wrap: break-word;
-      background-color: #0f0f0f;
+      background-color: #121212;
       padding: 1rem;
-      border-radius: 8px;
-      color: #fff;
-      overflow-x: auto;
-    }
-
-    button {
-      background: #ff2b2b;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      font-size: 1rem;
-      color: white;
-      border-radius: 8px;
+      color: #ffffff;
+      border-radius: 5px;
       margin-top: 1rem;
-      cursor: pointer;
-      transition: background 0.3s, box-shadow 0.3s;
-      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
-    }
-
-    button:hover {
-      background: #e60000;
-      box-shadow: 0 0 16px rgba(255, 0, 0, 0.8);
-    }
-
-    .copied {
-      color: #00ff99;
       font-size: 0.9rem;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    button.copy-btn {
+      margin-top: 1rem;
+      background-color: #ff2b2b;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .copied-msg {
+      color: #4caf50;
       margin-top: 0.5rem;
+      font-size: 0.9rem;
       display: none;
+    }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .features {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
-      padding: 2rem 1rem;
+      margin-top: 2rem;
     }
 
     .feature-box {
-      background: linear-gradient(145deg, #1e1e1e, #0f0f0f);
-      border: 2px solid #ff2b2b;
-      border-radius: 12px;
-      padding: 2rem;
-      width: 300px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .feature-box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+      background-color: #121212;
+      border: 1px solid #ff2b2b;
+      padding: 1.5rem;
+      border-radius: 8px;
+      width: 250px;
     }
 
     .feature-box h3 {
+      margin-bottom: 0.5rem;
       color: #ffffff;
     }
 
     .feature-box p {
-      color: #ffb3b3;
+      color: #ccc;
     }
 
-    .videos {
-      margin: 3rem auto;
-      max-width: 90%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      border: 2px solid #ff2b2b;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ff2b2b;
-    }
-
-    footer {
-      padding: 1rem;
+    .music-controls {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background: #1a1a1a;
-      font-size: 1rem;
-      color: #ffffff;
+      border: 1px solid #ff2b2b;
+      padding: 0.5rem;
+      border-radius: 5px;
+      z-index: 1000;
     }
 
-    a {
-      color: #ff4d4d;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #ffffff;
-      text-decoration: underline;
+    .music-controls input[type="range"] {
+      width: 100px;
     }
   </style>
 </head>
@@ -180,12 +175,19 @@
     <a href="#script">Script</a>
   </nav>
 
-  <footer>
-    <p> Need help? Join our Discord: <a href="https://discord.gg/G2WgRW295J" target="_blank">discord.gg/G2WgRW295J</a></p>
-  </footer>
+  <div class="help-banner">
+    Need Help? <a href="https://discord.gg/G2WgRW295J" target="_blank">Join our Discord server</a>.
+  </div>
 
   <section id="home">
-    <h2>Home</h2>
+    <div class="box">
+      <h2>Features</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>⚡ Auto Parry Detection</li>
+        <li>🔥 Customizable Visuals</li>
+        <li>🎯 High Accuracy Script</li>
+      </ul>
+    </div>
     <div class="features">
       <div class="feature-box">
         <h3>Sleek UI</h3>
@@ -203,34 +205,52 @@
   </section>
 
   <section id="videos">
-    <h2>Videos</h2>
-    <div class="videos">
-      <iframe src="https://www.youtube.com/embed/fdIAG4ylvbY" title="Blade Ball Script 1" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/iShJ0yD8dRg" title="Blade Ball Script 2" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/455juiLRd9c" title="Blade Ball Script 3" allowfullscreen></iframe>
+    <div class="box">
+      <h2>Videos</h2>
+      <div class="video-wrapper">
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/fdIAG4ylvbY" allowfullscreen></iframe>
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/iShJ0yD8dRg" allowfullscreen></iframe>
+        <iframe width="300" height="180" src="https://www.youtube.com/embed/455juiLRd9c" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
   <section id="script">
-    <div class="script-box">
-      <h2>Your Script</h2>
+    <div class="box">
+      <h2>Script</h2>
       <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
-      <button onclick="copyScript()">Copy Script</button>
-      <div class="copied" id="copied">Copied Script!</div>
+      <button class="copy-btn" onclick="copyScript()">Copy Script</button>
+      <div class="copied-msg" id="copiedMsg">Copied to clipboard!</div>
     </div>
   </section>
 
+  <audio id="bgMusic" loop autoplay>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="music-controls">
+    <label for="volumeControl">Music Volume:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
   <script>
     function copyScript() {
-      const scriptText = document.getElementById("scriptCode").innerText;
+      const scriptText = document.getElementById("scriptCode").textContent;
       navigator.clipboard.writeText(scriptText).then(() => {
-        const copiedMsg = document.getElementById("copied");
-        copiedMsg.style.display = 'block';
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = "block";
         setTimeout(() => {
-          copiedMsg.style.display = 'none';
+          msg.style.display = "none";
         }, 2000);
       });
     }
+
+    const bgMusic = document.getElementById("bgMusic");
+    const volumeControl = document.getElementById("volumeControl");
+    volumeControl.addEventListener("input", () => {
+      bgMusic.volume = volumeControl.value;
+    });
   </script>
 </body>
 </html>
