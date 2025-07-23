@@ -1,4 +1,3 @@
-<!-- [FULL UPDATED CODE BELOW — same as you provided but with the credit message added] -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -124,31 +123,6 @@
       flex-wrap: wrap;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .feature-box {
-      background-color: #121212;
-      border: 1px solid #ff2b2b;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 250px;
-    }
-
-    .feature-box h3 {
-      margin-bottom: 0.5rem;
-      color: #ffffff;
-    }
-
-    .feature-box p {
-      color: #ccc;
-    }
-
     .music-controls {
       position: fixed;
       bottom: 20px;
@@ -163,12 +137,6 @@
     .music-controls input[type="range"] {
       width: 100px;
     }
-
-    .credit {
-      margin: 2rem 0;
-      font-size: 0.9rem;
-      color: #888;
-    }
   </style>
 </head>
 <body>
@@ -180,6 +148,7 @@
     <a href="#home">Home</a>
     <a href="#videos">Videos</a>
     <a href="#script">Script</a>
+    <a href="#credits">Credits</a>
   </nav>
 
   <div class="help-banner">
@@ -187,20 +156,13 @@
   </div>
 
   <section id="home">
-    <div class="box"> 
-    <div class="features">
-      <div class="feature-box">
-        <h3>Sleek UI</h3>
-        <p>Modern, clean, and regularly updated interface for easy use.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Undetected Features</h3>
-        <p>Secure features designed to bypass most anti-cheats.</p>
-      </div>
-      <div class="feature-box">
-        <h3>Secure</h3>
-        <p>Uses advanced encryption to keep your data safe and private.</p>
-      </div>
+    <div class="box">
+      <h2>Features</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>⚡ Auto Parry Detection</li>
+        <li>🔥 Customizable Visuals</li>
+        <li>🎯 High Accuracy Script</li>
+      </ul>
     </div>
   </section>
 
@@ -217,5 +179,58 @@
 
   <section id="script">
     <div class="box">
-      <h2>Sc
+      <h2>Script</h2>
+      <code id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/AgentX771/ArgonHubX/main/Loader.lua"))()</code>
+      <button class="copy-btn" onclick="copyScript()">Copy Script</button>
+      <div class="copied-msg" id="copiedMsg">Copied to clipboard!</div>
+    </div>
+  </section>
 
+  <section id="credits">
+    <div class="box">
+      <h2>Credits</h2>
+      <p>Website coded by Exel (.exx3l)</p>
+      <p>Argon Hub X developed by AgentX771.</p>
+    </div>
+  </section>
+
+  <audio id="bgMusic" autoplay muted loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/06/audio_c2d3d2fd9b.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="music-controls">
+    <label for="volumeControl">Music Volume:</label>
+    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+  </div>
+
+  <script>
+    function copyScript() {
+      const scriptText = document.getElementById("scriptCode").textContent;
+      navigator.clipboard.writeText(scriptText).then(() => {
+        const msg = document.getElementById("copiedMsg");
+        msg.style.display = "block";
+        setTimeout(() => {
+          msg.style.display = "none";
+        }, 2000);
+      });
+    }
+
+    const bgMusic = document.getElementById("bgMusic");
+    const volumeControl = document.getElementById("volumeControl");
+    volumeControl.addEventListener("input", () => {
+      bgMusic.volume = volumeControl.value;
+    });
+
+    window.addEventListener("load", () => {
+      bgMusic.volume = volumeControl.value;
+    });
+
+    document.addEventListener("click", function playOnce() {
+      bgMusic.muted = false;
+      bgMusic.play().catch(e => console.warn("Autoplay blocked:", e));
+      document.removeEventListener("click", playOnce);
+    });
+  </script>
+</body>
+</html>
